@@ -1,6 +1,7 @@
 import React from 'react';
 import './contact.css';
 import  vector from '../../../assets/image/btn-vector.png'
+import  car from '../../../assets/image/car_norm.jpg';
 const Contact = () => {
     return (
         <div className='contact-container'>
@@ -16,6 +17,7 @@ const Contact = () => {
                      <img src={vector} alt=""/>
                 </button>
             </div>
+            <img src={car} className='car-img' alt=""/>
         </div>
     );
 };

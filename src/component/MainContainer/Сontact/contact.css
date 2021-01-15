@@ -1,7 +1,10 @@
 .contact-container{
     background: url("/src/assets/image/fon2.png");
     width: 100%;
-
+    margin-top: 127px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 .contact-title{
     text-align: center;
@@ -10,10 +13,16 @@
     font-weight: bold;
     font-size: 48px;
     line-height: 150%;
+    padding-top: 82px;
+
 }
 .form-container{
+    margin: auto;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    margin-top: 42px;
+    max-width: 850px;
+    width: 100%;
 
 }
 .form-container input {
@@ -25,10 +34,8 @@
     border-radius: 57px;
     outline: none;
     padding-left: 20px;
-    margin-left: 40px;
 }
 .form-container button {
-    margin-right: 40px;
     width: 260px;
     height: 60px;
     background: linear-gradient(180deg, #FE5626 0%, #F23F0E 100%), #59AAF1;
@@ -46,4 +53,10 @@
     justify-content: space-around;
     align-items: center;
 
+}
+.car-img{
+    width: 550px;
+    height: 270px;
+    margin: auto;
+    margin-top: 40px;
 }
