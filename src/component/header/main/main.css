@@ -1,0 +1,21 @@
+.image-pizza-main {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 70px;
+    margin: auto;
+}
+.pizza-img{
+    position: relative;
+    width: 800px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.main-block{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}

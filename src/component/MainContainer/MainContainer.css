@@ -1,0 +1,11 @@
+.total-price-basket{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+}
+.total-price-container{
+    margin-top: 90px;
+
+}

@@ -1,0 +1,11 @@
+.product-container{
+    margin-top: 12px;
+    text-align: center;
+}
+.product-container-title{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 59px;
+}

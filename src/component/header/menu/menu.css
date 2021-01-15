@@ -1,0 +1,48 @@
+.container{
+    max-width: 1161px;
+    width: 100%;
+    margin: auto;
+    padding-top: 25px;
+}
+ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+li{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    padding-left: 40px;
+}
+
+li:last-child {
+    padding: 0;
+}
+.elipse{
+    width:  33px;
+    height: 33px;
+    background: linear-gradient(287.74deg, #F58656 8.52%, #FE5626 92.72%);
+    box-shadow: 0px 4px 8px rgba(205, 169, 41, 0.26);
+    border-radius: 59px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.telethon {
+    background: url("/src/assets/image/Vector.png");
+    width: 14px;
+    height: 14px;
+}
+
+.logo{
+    margin-left: 162px;
+    margin-right: 162px;
+}
+

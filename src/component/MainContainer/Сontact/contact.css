@@ -1,0 +1,49 @@
+.contact-container{
+    background: url("/src/assets/image/fon2.png");
+    width: 100%;
+
+}
+.contact-title{
+    text-align: center;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 150%;
+}
+.form-container{
+    display: flex;
+    justify-content: center;
+
+}
+.form-container input {
+    width: 260px;
+    height: 60px;
+    background: #FFFFFF;
+    border: 2px solid #ECEEF7;
+    box-sizing: border-box;
+    border-radius: 57px;
+    outline: none;
+    padding-left: 20px;
+    margin-left: 40px;
+}
+.form-container button {
+    margin-right: 40px;
+    width: 260px;
+    height: 60px;
+    background: linear-gradient(180deg, #FE5626 0%, #F23F0E 100%), #59AAF1;
+    box-shadow: 0 4px 8px rgba(205, 169, 41, 0.26);
+    border-radius: 59px;
+    outline: none;
+    border: none;
+    color: white;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 140%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}

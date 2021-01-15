@@ -1,0 +1,23 @@
+.panel-type{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 39px;
+}
+.panel-type li{
+    padding-left: 40px;
+}
+.button-type{
+    width: 135px;
+    height: 55px;
+    background: linear-gradient(0deg, #ECEEF6, #ECEEF6), #59AAF1;
+    border-radius: 45px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 140%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}

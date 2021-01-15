@@ -1,0 +1,30 @@
+
+.circle-basket{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    box-shadow:  0 0 15px 0  rgba(0,0,0,0.17);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 50px;
+
+}
+.price-basket{
+    padding: 3px;
+    position: absolute;
+    left: 35px;
+    bottom: -4px;
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(287.74deg, #F58656 8.52%, #FE5626 92.72%), linear-gradient(180deg, #FE5626 0%, #F23F0E 100%), #59AAF1;
+    border-radius: 50%;
+    color: white;
+    text-align: center;
+}
+.circle-basket img{
+    width: 32px;
+    height: 32px;
+    color: #F58656;
+}

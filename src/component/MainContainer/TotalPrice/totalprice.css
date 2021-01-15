@@ -1,0 +1,25 @@
+.total-price{
+    position: relative;
+    width: 100px !important;
+    height: 40px !important;
+    background: black;
+    border-radius: 5px;
+    color: white;
+   display: flex;
+    justify-content: center;
+    align-items: center;
+   margin-right: 20px;
+}
+.total-price::after{
+    content:'';
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    margin-left: 45px;
+    width: 0;
+    height: 0;
+    border-top: solid 10px black;
+    border-left: solid 10px transparent;
+    border-right: solid 10px transparent;
+    transform: rotate(270deg);
+}

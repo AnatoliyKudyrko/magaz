@@ -1,0 +1,17 @@
+.slider-container{
+    margin-top: 120px;
+    display: flex;
+    justify-content: space-between;
+    padding:0;
+    width: 99%;
+}
+.item-slider{
+    margin-left: 30px;
+    padding: 0;
+}
+.item-slider li:last-child{
+    margin-left: 0;
+}
+.item-slider li:first-child{
+    margin-left: 0;
+}
