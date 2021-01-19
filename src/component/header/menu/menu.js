@@ -27,8 +27,7 @@ const Logo = ()=>{
                         <li>Contacts</li>
                         <li className='logo'>{Logo()}</li>
                         <li className='circle'>Daily 11am - 9pm</li>
-                        <li>{telethon}</li>
-                        <li> 0 800 33 08 98</li>
+                        <li> {telethon}<span>0 800 33 08 98</span></li>
                     </ul>
             </div>
         );

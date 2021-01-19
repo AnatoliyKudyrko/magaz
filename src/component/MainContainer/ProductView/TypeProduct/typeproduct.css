@@ -1,4 +1,6 @@
 .panel-type{
+    width: 55vw;
+    margin: auto;
     display: flex;
     justify-content: center;
     align-items: center;

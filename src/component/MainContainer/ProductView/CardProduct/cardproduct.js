@@ -3,7 +3,8 @@ import './cardproduct.css';
 import pizza from '../../../../assets/image/pizza-card.png';
 import buy from '../../../../assets/image/buy.png';
 import refresh from '../../../../assets/image/refresh.png';
-const CardProduct = () => {
+const CardProduct = (props) => {
+console.log(props.data)
     return (
         <div>
             <div className='card-product-container container'>

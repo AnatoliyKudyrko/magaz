@@ -1,6 +1,8 @@
 .product-container{
     margin-top: 12px;
     text-align: center;
+    width: 79vw;
+    margin: auto;
 }
 .product-container-title{
     font-family: Montserrat;
