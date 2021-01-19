@@ -4,6 +4,7 @@ import TypeProduct from "./TypeProduct/TypeProduct";
 import CardProduct from "./CardProduct/cardproduct";
 import {useDispatch, useSelector} from 'react-redux';
 import {FetchPizzaThunk} from "../../../redux/action/action";
+import {getPizza} from "../../../dal/api";
 
 
 const ProductView = () => {
@@ -18,14 +19,14 @@ const ProductView = () => {
             <p className='product-container-title'> Popular dishes</p>
             <TypeProduct />
             {
-                state.length === 0 ? <Dsa /> :<CardProduct data={state}/>
+                state.length === 0 ? <TitleNun /> :<CardProduct data={state}/>
             }
 
         </div>
     );
 };
 
-const Dsa = ()=>{
-    return <h2>SADASD</h2>
+const TitleNun = ()=>{
+    return <h2>Нет в наличии</h2>
 }
 export default ProductView;

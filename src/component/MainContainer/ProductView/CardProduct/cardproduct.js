@@ -1,17 +1,20 @@
-import React from 'react';
+import React,{useEffect,useState} from 'react';
 import './cardproduct.css';
 import pizza from '../../../../assets/image/pizza-card.png';
 import buy from '../../../../assets/image/buy.png';
 import refresh from '../../../../assets/image/refresh.png';
-const CardProduct = (props) => {
-console.log(props.data)
+const CardProduct = ({data}) => {
+    const [dataPizza, setDataPizza] = useState()
+   useEffect(()=>{
+       console.log(data.pizza.data)
+       setDataPizza(data.pizza.data)
+   },[data])
     return (
         <div>
             <div className='card-product-container container'>
-                <CardProductItem />
-                <CardProductItem />
-                <CardProductItem />
-                <CardProductItem />
+                {
+                   dataPizza === [] ? null:  data.pizza.data.map(i=><li key={i.id}><CardProductItem data={i} /></li>)
+                }
 
             </div>
             <AddProductView />
@@ -20,7 +23,7 @@ console.log(props.data)
     );
 };
 
-const CardProductItem = ()=>{
+const CardProductItem = ({data})=>{
     return (
         <div className='card-body'>
             <img src={pizza} alt="pizza"/>
@@ -29,9 +32,9 @@ const CardProductItem = ()=>{
                 <span>32cm</span>
                 <span>48cm</span>
             </div>
-            <p className='card-title'>Quattro formaggi</p>
-            <p className='card-desc'>Dough, Mozzarella, Cheddar, Blue, Parmesan</p>
-            <p className='card-price'>119 UAH</p>
+            <p className='card-title'>{data.name}</p>
+            <p className='card-desc'>{data.topping.map(i=>(<span key={i} style={{marginLeft:'10px'}}>{i}</span>))}</p>
+            <p className='card-price'>{data.price} UAN</p>
             <div className="product-buy-container">
                 <div className="product-buy">
                     <div className="bg-icon-buy">

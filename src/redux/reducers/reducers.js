@@ -1,7 +1,9 @@
 import {PizzaReducer} from "./pizza-reducer";
 import {combineReducers} from "redux";
+import {TypeProductReducer} from "./typeproduct-reducer";
 
 
 export default combineReducers({
-    PizzaReducer
+    pizza:PizzaReducer,
+    typeProduct:TypeProductReducer
 })
