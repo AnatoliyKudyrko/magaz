@@ -1,14 +1,18 @@
-import React,{useEffect,useState} from 'react';
+import React,{useEffect,useState,useCallback} from 'react';
 import './cardproduct.css';
 import pizza from '../../../../assets/image/pizza-card.png';
 import buy from '../../../../assets/image/buy.png';
 import refresh from '../../../../assets/image/refresh.png';
+import { useDispatch } from 'react-redux';
+import {LOAD_BASKET, LoadBasket} from "../../../../redux/action/action";
+
 const CardProduct = ({data}) => {
     const [dataPizza, setDataPizza] = useState()
+
    useEffect(()=>{
-       console.log(data.pizza.data)
        setDataPizza(data.pizza.data)
    },[data])
+
     return (
         <div>
             <div className='card-product-container container'>
@@ -24,21 +28,42 @@ const CardProduct = ({data}) => {
 };
 
 const CardProductItem = ({data})=>{
+    const [size,setSize] = useState(24);
+    const dispatch = useDispatch();
+    let price = 0;
+    let styleSizeSmall = 'size';
+    let styleSizeBig = 'size';
+
+    const SetDiameter =(value)=>{
+        setSize(value)
+    }
+
+    if(size === 24){
+        styleSizeSmall = 'size active-size';
+        styleSizeBig = 'size';
+
+    } else {
+        styleSizeBig = 'size active-size';
+         styleSizeSmall = 'size';
+
+    }
+
+
+
     return (
         <div className='card-body'>
             <img src={pizza} alt="pizza"/>
             <div className='pizza-diameter'>
-                <span>24cm</span>
-                <span>32cm</span>
-                <span>48cm</span>
+                <span onClick={()=>SetDiameter(24)} className={styleSizeSmall}>24cm</span>
+                <span onClick={()=>SetDiameter(32)} className={styleSizeBig}>32cm</span>
             </div>
             <p className='card-title'>{data.name}</p>
             <p className='card-desc'>{data.topping.map(i=>(<span key={i} style={{marginLeft:'10px'}}>{i}</span>))}</p>
-            <p className='card-price'>{data.price} UAN</p>
+            <p className='card-price'>{size === 24? price = data.price: price= Math.floor(data.price * 1.5)} UAN</p>
             <div className="product-buy-container">
                 <div className="product-buy">
-                    <div className="bg-icon-buy">
-                        <img src={buy} alt=""/>
+                    <div className="bg-icon-buy"onClick={() => dispatch(LoadBasket({id:Math.floor(Math.random()*100),name:data.name,size,price}))} >
+                        <img src={buy} alt="" />
                     </div>
                 </div>
             </div>

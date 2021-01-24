@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from "./header/header";
 import './app.css'
-import Basket from "./MainContainer/Basket/basket";
+import Basket from "./MainContainer/BasketContainer/Basket/basket";
 import MainContainer from "./MainContainer/MainContainer";
 import Footer from "./footer/footer";
 function App() {

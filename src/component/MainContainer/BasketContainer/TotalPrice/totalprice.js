@@ -1,9 +1,9 @@
 import React from 'react';
 import './totalprice.css';
-const TotalPrice = () => {
+const TotalPrice = (props) => {
     return (
         <div className='total-price'>
-            2124
+            {props.price} UAN
         </div>
     );
 };

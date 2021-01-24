@@ -13,19 +13,17 @@ const initialState = [
             ...state
         }
         case UPDATE_TYPE_PRODUCT:
-            let obj =  state.map(product => {
-                let objActive = {};
-                let objAll = {};
-                if (product.count === action.id-1) {
-                    objActive= {...product, status: product.status = true}
-                };
-                    objAll= {...product, status: product.status = false}
-
-                return {...objActive,objAll};
+            let objDefault =  state.map(product => {
+                return   {...product, status: product.status = false};
             });
-
-            console.log(obj)
-
+            let objActive =  objDefault.map(product => {
+                let obj = {};
+                if (product.count === action.id) {
+                    obj=  {...product, status: product.status = true}
+                };
+              return {...product,...obj}
+            });
+          return objActive;
         default: return state
     }
 }

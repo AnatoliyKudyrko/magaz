@@ -4,12 +4,15 @@ import TypeProduct from "./TypeProduct/TypeProduct";
 import CardProduct from "./CardProduct/cardproduct";
 import {useDispatch, useSelector} from 'react-redux';
 import {FetchPizzaThunk} from "../../../redux/action/action";
-import {getPizza} from "../../../dal/api";
+
 
 
 const ProductView = () => {
     const dispatch = useDispatch();
     const state = useSelector(state => state);
+    const getID = (id)=>{
+        console.log(id)
+    }
   useEffect(()=>{
      dispatch(FetchPizzaThunk());
   },[])
@@ -17,7 +20,7 @@ const ProductView = () => {
     return (
         <div className='product-container'>
             <p className='product-container-title'> Popular dishes</p>
-            <TypeProduct />
+            <TypeProduct getId={getID} />
             {
                 state.length === 0 ? <TitleNun /> :<CardProduct data={state}/>
             }

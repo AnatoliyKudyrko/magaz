@@ -1,34 +1,51 @@
-import React,{useEffect,useState,useRef} from 'react';
+import React,{useEffect,useState,useRef,useCallback} from 'react';
 import './typeproduct.css';
 import {useDispatch, useSelector} from "react-redux";
 import {UpdateTypeProduct} from "../../../../redux/action/action";
 
-const TypeProduct = () => {
+const TypeProduct = (props) => {
     const state = useSelector(state => state.typeProduct);
     return (
         <div className='panel-type'>
-            <TypeProductItem item={state} />
+            <TypeProductItem item={state} getId={props.getId}/>
         </div>
     );
 };
 
 const TypeProductItem = (props)=>{
+    const [id,setID] = useState();
+    useEffect(()=>{
 
+    })
+    const idItem = (id)=>{
+        setID(id);
+    }
     return (
-        props.item.map(i=><li  key={i.count} ><Btn  name={i.name} id={i.count} status={i.status}  /></li>)
+        props.item.map(i=>
+            <li  key={i.count} >
+            <Btn  name={i.name} id={i.count}
+                  status={i.status} getId={props.getId}
+                  idItem={idItem}
+
+            />
+           </li>)
     )
 }
 
 const Btn =(props)=>{
-    const [value, setValue] = useState(props.status);
     const dispatch = useDispatch();
-   const onChanges = (e)=>{
-       setValue(e.target.checked);
-       dispatch(UpdateTypeProduct(props.id))
-   }
+
+    useEffect(()=>{
+
+    },[props.status])
+
+    const idGetting = ()=>{
+        props.getId(props.id);
+        props.idItem(props.id)
+    };
     return (
         <label className="checkbox-btn">
-            <input type="checkbox" checked={value}  onChange={(e)=>onChanges(e)} />
+            <input type="checkbox" checked={props.status}  onChange={(e)=>dispatch(UpdateTypeProduct(props.id))} onClick={()=>idGetting()}/>
                 <span>{props.name } </span>
         </label>
         )
