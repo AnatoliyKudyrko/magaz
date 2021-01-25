@@ -41,26 +41,24 @@
     z-index: 999;
     transition: background 1s ease;
     border-radius: 5px;
+    text-align: center;
+    overflow: auto;
+    max-height: 300px;
+    height: 100%;
 }
 .visible{
     visibility: visible;
 }
 .product-order-item{
-    width: 100%;
-    text-align: center;
+   width: 180px;
     display: flex;
     justify-content: space-between;
+
 }
 .product-order-item p{
-  display: flex;
-    justify-content: space-between;
-    padding-left: 45px;
-    padding-right: 45px;
+  text-align: left;
 }
-.product-order-item:after{
-    content: '';
-    border-top: 2px solid black;
-}
+
 .product-order-item img{
     width: 20px;
     height: 20px;

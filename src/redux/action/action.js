@@ -6,6 +6,7 @@ export const UPDATE_TYPE_PRODUCT = 'UPDATE_TYPE_PRODUCT';
 export const GET_BASKET = 'GET_BASKET';
 export const LOAD_BASKET = 'LOAD_BASKET';
 export const DELETE_ORDER_BASKET = 'DELETE_ORDER_BASKET';
+export const DELETE_ALL_ORDER_BASKET = 'DELETE_ALL_ORDER_BASKET';
 
 function FetchPizza(data){
     return {
@@ -15,18 +16,17 @@ function FetchPizza(data){
 
 }
 
-function FetchTypeProduct(){
-    return {
-        type:LOAD_TYPE_PRODUCT
-    }
 
-}
 export function DeleteOrderBasket(id){
     return {
         type:DELETE_ORDER_BASKET,
         id
     }
-
+}
+export function DeleteAllOrderBasket(){
+    return {
+        type:DELETE_ALL_ORDER_BASKET
+    }
 }
 export function LoadBasket(data){
     return {
