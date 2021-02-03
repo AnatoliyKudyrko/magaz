@@ -7,26 +7,18 @@ const TypeProduct = (props) => {
     const state = useSelector(state => state.typeProduct);
     return (
         <div className='panel-type'>
-            <TypeProductItem item={state} getId={props.getId}/>
+            <TypeProductItem item={state} getId={props.getId} getName={props.getName}/>
         </div>
     );
 };
 
 const TypeProductItem = (props)=>{
-    const [id,setID] = useState();
-    useEffect(()=>{
 
-    })
-    const idItem = (id)=>{
-        setID(id);
-    }
     return (
         props.item.map(i=>
             <li  key={i.count} >
             <Btn  name={i.name} id={i.count}
-                  status={i.status} getId={props.getId}
-                  idItem={idItem}
-
+                  status={i.status} getName={props.getName}
             />
            </li>)
     )
@@ -34,18 +26,16 @@ const TypeProductItem = (props)=>{
 
 const Btn =(props)=>{
     const dispatch = useDispatch();
-
     useEffect(()=>{
-
     },[props.status])
 
-    const idGetting = ()=>{
-        props.getId(props.id);
-        props.idItem(props.id)
-    };
     return (
         <label className="checkbox-btn">
-            <input type="checkbox" checked={props.status}  onChange={(e)=>dispatch(UpdateTypeProduct(props.id))} onClick={()=>idGetting()}/>
+            <input type="checkbox" checked={props.status}
+                   onChange={(e)=>dispatch(UpdateTypeProduct(props.id))}
+                   onClick={()=>props.getName(props.name)}
+
+            />
                 <span>{props.name } </span>
         </label>
         )

@@ -1,7 +1,7 @@
 import {LOAD_TYPE_PRODUCT, UPDATE_TYPE_PRODUCT} from "../action/action";
 
 const initialState = [
-    {count:1,name:'Pizza',status:false},
+    {count:1,name:'Pizza',status:true},
     {count:2,name:'Sushi',status:false},
     {count:3,name:'Salad',status:false},
     {count:4,name:'Dessert',status:false},

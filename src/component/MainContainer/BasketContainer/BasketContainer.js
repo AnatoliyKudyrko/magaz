@@ -8,9 +8,6 @@ import {DeleteAllOrderBasket, DeleteOrderBasket} from "../../../redux/action/act
 const BasketContainer = () => {
     const state = useSelector(state=>state.basket);
     const dispatch = useDispatch();
-    const getID =(id)=>{
-             dispatch(DeleteOrderBasket(id))
-    }
     const DeleteAllOrder = ()=>{
         dispatch(DeleteAllOrderBasket())
     }
@@ -20,9 +17,8 @@ const BasketContainer = () => {
     },[state])
     return (
         <div style={{display:'flex',alignItems:'center'}}>
-            <TotalPrice price={state.price}/>
-            <Basket count={state.count} state={state} getID={getID} DeleteAllOrder={DeleteAllOrder}/>
-
+            <TotalPrice price={state.price} />
+            <Basket count={state.count} state={state}  DeleteAllOrder={DeleteAllOrder} />
         </div>
     );
 };

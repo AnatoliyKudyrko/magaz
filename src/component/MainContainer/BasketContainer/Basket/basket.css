@@ -27,39 +27,66 @@
     width: 32px;
     height: 32px;
     color: #F58656;
+    cursor: pointer;
 }
 .bascket{
-    position: relative;
+    cursor: pointer;
+    display: flex;
 }
 .bascket-hover{
-    margin-top: 10px;
-    position: absolute;
+    margin-top: 30px;
     width: 200px;
-    background: #F0F5FB;
-    visibility: hidden;
+    background: white;
     right: 50px;
     z-index: 999;
-    transition: background 1s ease;
     border-radius: 5px;
-    text-align: center;
+    text-align: left;
     overflow: auto;
     max-height: 300px;
     height: 100%;
+    position: absolute;
 }
-.visible{
-    visibility: visible;
+.close img{
+    width: 20px;
+    height: 20px;
+}
+ .visible  {
+display: block;
+}
+ .un-visible {
+     display: none;
 }
 .product-order-item{
-   width: 180px;
+     width: 180px;
     display: flex;
     justify-content: space-between;
 
 }
 .product-order-item p{
-  text-align: left;
+   text-align: left;
 }
 
 .product-order-item img{
     width: 20px;
     height: 20px;
+
+}
+.btn-all{
+    outline: none;
+    border: none;
+    color: white;
+    background: #F23F0E;
+    cursor: pointer;
+    border-radius: 4px;
+    height: 3vh;
+    margin-bottom: 15px;
+}
+.btn-buy-container{
+    width: 100%;
+    text-align: center;
+    margin-top: 15px;
+}
+.btn-buy{
+   height: 5vh;
+    padding: 2px;
 }
