@@ -14,24 +14,32 @@ import {
 
 
 const ProductView = () => {
+    const [name,setName]= useState('Pizza');
     const dispatch = useDispatch();
     const state = useSelector(state => state);
-
-    const [name,setName]= useState('');
     const getName =(name)=>{
         setName(name);
     }
 
-     const LoadDataProduct = ()=>{
-         dispatch(FetchPizzaThunk());
-         dispatch(FetchSushiThunk());
-         dispatch(FetchSaladThunk());
-         dispatch(FetchDessertThunk());
-         dispatch(FetchDrinkThunk());
+     const LoadDataProduct = (name)=>{
+        switch (name) {
+            case 'Pizza' :     dispatch(FetchPizzaThunk());
+                break;
+            case 'Sushi':    dispatch(FetchSushiThunk());
+                break;
+            case 'Salad':    dispatch(FetchSaladThunk());
+                break;
+            case 'Dessert': dispatch(FetchDessertThunk());
+                break;
+            case 'Drinks':  dispatch(FetchDrinkThunk());
+                break;
+            default :  dispatch(FetchPizzaThunk());
+        }
+
      }
   useEffect(()=>{
- LoadDataProduct();
-  },[])
+    LoadDataProduct(name);
+  })
 
     return (
         <div className='product-container'>
